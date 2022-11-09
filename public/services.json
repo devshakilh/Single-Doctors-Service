@@ -1,0 +1,44 @@
+[
+    {
+        "title": "Baby Operation",
+        "img": "https://media.self.com/photos/57d88c4e50778cef321a46f7/master/pass/natural-c-section_feat.jpg",
+        "price": "$250",
+        "short_des": "You may be in the operating theatre for one hour or more. The operation takes about 30 to 40 minutes. The baby is usually born in the first 10 minutes. The doctors will talk to you during the operation and tell you what is happening.",
+        "rating": "4.9"
+    },
+    {
+        "title": "Eye Operation",
+        "img": "https://myvision.org/wp-content/uploads/2022/02/woman-having-laser-eye-surgery.jpg",
+        "price": "$350",
+        "short_des": "They are pioneers in this field with 25 years of experience in LASIK surgery & have delivered lectures and conducted workshops to train other ophthalmologists in Lasik around the world in USA, UK, China, Australia, Singapore,Malaysia, Philippines, South Korea, Sri Lanka, Nepal ",
+        "rating": "4.9"
+    },
+    {
+        "title": "Liver Transplant",
+        "img": "https://www.researchgate.net/publication/333327709/figure/fig2/AS:766017164832772@1559644132573/Trocar-position-for-laparoscopic-liver-resection-Surgery-was-performed-by-the-insertion.jpg",
+        "price": "$550",
+        "short_des": "Necrosis of the pancreas is a dreaded complication of acute severe pancreatitis. Rarely it requires very complicated extensive surgery to remove the dead tissues within and around the pancreas. This CT scan shows the areas of necrosis and next picture shows the necrotic dead tissues removed during the operation.",
+        "rating": "4.9"
+    },
+    {
+        "title": "BRAIN SURGERY",
+        "img": "https://www.jaohns.com/wp-content/uploads/2019/10/operation-80124_640.jpg",
+        "price": "$300",
+        "short_des": "This head operation procedure involves making incisions or a small hole at the skull to insert a small electrode inside the brain. This device is connected to a battery in the chest that sends electrical signals to the brain. Deep brain stimulation is done in patients who show symptoms of brain disorders such as Parkinson’s disease.",
+        "rating": "4.9"
+    },
+    {
+        "title": "Surgery",
+        "img": "https://emch.com.bd/wp-content/uploads/2022/10/surgeon-GettyImages-200140323-001-578ce4ab5f9b584d20ce3d9f.jpg",
+        "price": "$400",
+        "short_des": "Obesity is not only a cosmetic concern but also associated with increased risk of life-threatening conditions such as diabetes, hypertension, high cholesterol, heart diseases, cancers, etc. Bariatric surgery or weight-loss surgeries are done when diet and exercising fail to achieve the target body weight.",
+        "rating": "4.9"
+    },
+    {
+        "title": "Ear Surgery",
+        "img": "https://asterhospital.com/blog/wp-content/uploads/2020/03/aster-resize-4.jpg",
+        "price": "$250",
+        "short_des": "Transcanal endoscopic ear surgery (TEES) is minimally invasive surgery to operate on tiny, delicate structures within the middle ear. It differs from traditional ear surgery in that surgeons access the middle ear through the ear canal rather than through an incision behind the ear. This causes less pain and results in faster recovery.",
+        "rating": "4.9"
+    }
+]
