@@ -3,6 +3,7 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 
 import { Link } from 'react-router-dom';
+
 const AllCards = ({ service }) => {
     const { _id, title, price, img, short_des } = service;
 
@@ -10,7 +11,9 @@ const AllCards = ({ service }) => {
 
         <div>
             <div className="card bg-slate-400  card-compact py-5 mx-5 w-96 bg-white shadow-xl">
+                <div>
 
+                </div>
                 <PhotoProvider>
                     <PhotoView src={img}>
                         <figure><img className='w-72 h-72 rounded-md' src={img} alt="Shoes" /></figure>

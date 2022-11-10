@@ -4,6 +4,8 @@ import 'react-photo-view/dist/react-photo-view.css';
 
 import { Link } from 'react-router-dom';
 
+
+
 const ServiceCard = ({ service }) => {
     const { _id, title, price, img, short_des } = service;
 
