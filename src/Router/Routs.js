@@ -6,6 +6,7 @@ import AddServiceCardDetails from "../Pages/AddServiceCardDetails";
 import AllCard from "../Pages/AllCard";
 
 import Home from "../Pages/Home";
+import PrivateRoute from "../Pages/PrivateRoute";
 
 import Review from "../Pages/Review";
 import Service from "../Pages/Service";
@@ -67,7 +68,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addservice',
-                element: <AddService></AddService>
+                element: <PrivateRoute><AddService></AddService></PrivateRoute>
             },
             {
                 path: '/login',

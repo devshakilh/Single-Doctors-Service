@@ -32,27 +32,7 @@ const Review = () => {
         }
     }
 
-    // const handleStatusUpdate = id => {
-    //     fetch(`https://assignment-11-server-blush.vercel.app/review/${id}`, {
-    //         method: 'PATCH',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify({ status: 'Approved' })
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data);
-    //             if (data.modifiedCount > 0) {
-    //                 const remaining = review.filter(odr => odr._id !== id);
-    //                 const approving = review.find(odr => odr._id === id);
-    //                 approving.status = 'Approved'
 
-    //                 const newReview = [approving, ...remaining];
-    //                 setReview(newReview);
-    //             }
-    //         })
-    // }
 
     return (
         <div>
@@ -76,7 +56,7 @@ const Review = () => {
                                 key={review._id}
                                 review={review}
                                 handleDelete={handleDelete}
-                            // handleStatusUpdate={handleStatusUpdate}
+
                             ></ReviewRow>)
                         }
                     </tbody>

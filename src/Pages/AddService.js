@@ -61,15 +61,15 @@ const AddService = () => {
                 <div className='grid grid-cols-1 ml-10 lg:grid-cols-2 gap-4 '>
                     <input name='firstName' type="text" placeholder="First Name" className="input input-bordered input-info w-full max-w-xs" />
                     <input name='lastName' type="text" placeholder="Last Name" className="input input-bordered input-info w-full max-w-xs" />
-                    <input name='email' type="text" placeholder="Your email" defaultValue={user?.email} className="input input-bordered input-info required: w-full max-w-xs" />
+                    <input name='email' readOnly type="text" placeholder="Your email" defaultValue={user?.email} className="input input-bordered input-info required: w-full max-w-xs" />
                     <input name='price' type="text" placeholder="price" className="input input-bordered input-info w-full max-w-xs" />
-                    <input name='image' type="text" placeholder="image url" className="input input-bordered input-info w-full max-w-xs" />
+                    <input name='image' required type="text" placeholder="image url" className="input input-bordered input-info w-full max-w-xs" />
                     <input name='title' type="text" placeholder="service Name" required className="input input-bordered input-info w-full max-w-xs" />
 
 
                 </div>
 
-                <textarea className="textarea h-24 w-full textarea-accent" name='message' placeholder="Your Message" required></textarea>
+                <textarea className="textarea h-24 w-full textarea-accent" name='message' placeholder="Description" required></textarea>
                 <input className=' btn text-white' type="submit" value="Add Service" />
             </form>
             <AddServiceCard></AddServiceCard>

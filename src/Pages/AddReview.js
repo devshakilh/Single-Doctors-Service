@@ -54,7 +54,7 @@ const AddReview = () => {
                 <div className='grid grid-cols-1 ml-10 lg:grid-cols-2 gap-4 '>
                     <input name='firstName' type="text" placeholder="First Name" className="input input-bordered input-info w-full max-w-xs" />
                     <input name='lastName' type="text" placeholder="Last Name" className="input input-bordered input-info w-full max-w-xs" />
-                    <input name='email' type="text" placeholder="Your email" defaultValue={user?.email} className="input input-bordered input-info required: w-full max-w-xs" />
+                    <input name='email' type="text" placeholder="Your email" readOnly defaultValue={user?.email} className="input input-bordered input-info required: w-full max-w-xs" />
                     <input name='phone' type="text" placeholder="Your Phone" className="input input-bordered input-info w-full max-w-xs" />
 
 
