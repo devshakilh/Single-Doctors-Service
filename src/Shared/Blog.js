@@ -7,6 +7,10 @@ const Blog = () => {
                 <h1 className=' text-4xl font-semibold'>Difference between SQL and NoSQL?</h1>
                 <h4 className='px-20 text-xl'>Ans: SQL is the programming language used to interface with relational databases. (Relational databases model data as records in rows and tables with logical links between them). NoSQL is a class of DBMs that are non-relational and generally do not use SQL.</h4>
             </div>
+            <div>
+                <h1 className=' text-4xl font-semibold'>What is JWT, and how does it work?</h1>
+                <h5 className='px-20 text-xl'>Ans: What is JWT (JSON Web Token)? JSON Web Token (JWT) is an open standard (RFC 7519) for securely transmitting information between parties as JSON object. It is compact, readable and digitally signed using a private key/ or a public key pair by the Identity Provider(IdP).</h5>
+            </div>
 
         </div>
     );
