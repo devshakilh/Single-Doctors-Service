@@ -14,7 +14,11 @@ const AllCards = ({ service }) => {
                 <div>
 
                 </div>
-
+                <PhotoProvider>
+                    <PhotoView src={img}>
+                        <figure><img className='w-72 h-72 rounded-md' src={img} alt="Shoes" /></figure>
+                    </PhotoView>
+                </PhotoProvider>
                 <div className="card-body relative">
                     <h2 className="card-title text-black font-bold ">{title}</h2>
                     <p className='text-black font-semibold'>{short_des.slice(0, 100)}..</p>
