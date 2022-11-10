@@ -28,10 +28,10 @@ const Home = () => {
                 </div>
 
             </div> */}
-            <div className='bg-white'>
+            <div className='bg-slate-100'>
                 <div className="hero min-h-screen bg-slate-100">
                     <div className="hero-content flex-col lg:flex-row ">
-                        <img src={img2} alt='' className="w-1/4 h-2/4 image-2 rounded-lg shadow-2xl" />
+                        <img src={img2} alt='' className="w-1/4 h-2/4 image-2 rounded-lg shadow-xl" />
                         <div className=''>
                             <h1 className="text-5xl font-bold text-black">Dr MUHAMMAD AZIZ</h1>
                             <p className="py-6  text-black">We provide the most full medical services so every person could have the opportunity <br /> to recived my help </p>

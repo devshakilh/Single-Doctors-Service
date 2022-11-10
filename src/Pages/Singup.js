@@ -4,15 +4,15 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
-
+import { toast } from 'react-toastify';
 
 
 const SignUp = () => {
 
 
     const [error, setError] = useState('');
-    const [accepted, setAccepted] = useState(false);
-    const { createUser, updateUserProfile, verifyEmail } = useContext(AuthContext);
+
+    const { createUser, updateUserProfile, } = useContext(AuthContext);
 
 
     const { providerLogin } = useContext(AuthContext);
@@ -42,8 +42,8 @@ const SignUp = () => {
                 setError('');
                 form.reset();
                 handleUpdateUserProfile(name, photoURL);
-                handleEmailVerification();
-                // success('Please verify your email address.')
+
+                toast.success('Please verify your email address.')
             })
             .catch(e => {
                 console.error(e);
@@ -63,18 +63,6 @@ const SignUp = () => {
             .catch(error => console.error(error));
     }
 
-    const handleEmailVerification = () => {
-        verifyEmail()
-            .then(() => { })
-            .catch(error => console.error(error));
-    }
-
-    const handleAccepted = event => {
-        setAccepted(event.target.checked)
-    }
-    const handleVerify = () => {
-        alert('verifyEmail');
-    }
 
 
     // const { createUser } = useContext(AuthContext);
@@ -91,6 +79,8 @@ const SignUp = () => {
     //         })
     //         .catch(err => console.error(err));
     // }
+
+
 
     return (
         <div className="hero  justify-center  bg-slate-100">
@@ -111,18 +101,19 @@ const SignUp = () => {
                             <label className="label">
                                 <span className="label-text text-black">Email</span>
                             </label>
-                            <input type="text" name='email' placeholder="email" className="input input-bordered" required />
+                            <input type="email" name='email' placeholder="email" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text text-black">Password</span>
                             </label>
-                            <input type="text" name='password' placeholder="password" className="input input-bordered" required />
+                            <input type="password" name='password' placeholder="password" className="input input-bordered" required />
 
                         </div>
                         <div className="form-control mt-5">
                             <input className="btn btn-primary" type="submit" value="Sign Up" />
                         </div>
+                        {error}
                     </form>
                     <p className='text-center text-black'>Already have an account? <Link className='text-orange-600 font-bold' to="/login">Login</Link> </p>
                     <div>

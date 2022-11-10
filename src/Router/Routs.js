@@ -1,7 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import AddReview from "../Pages/AddReview";
+import AddService from "../Pages/AddService";
+import AddServiceCardDetails from "../Pages/AddServiceCardDetails";
+import AllCard from "../Pages/AllCard";
+
 import Home from "../Pages/Home";
+
 import Review from "../Pages/Review";
 import Service from "../Pages/Service";
 
@@ -41,12 +46,28 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`https://assignment-11-server-blush.vercel.app/services/${params.id}`)
             },
             {
+                path: '/addservicecarddetails/:id',
+                element: <AddServiceCardDetails></AddServiceCardDetails>,
+                loader: ({ params }) => fetch(`https://assignment-11-server-blush.vercel.app/add/${params.id}`)
+            },
+            {
+                path: '/allcard',
+                element: <AllCard></AllCard>
+            },
+
+            {
                 path: '/addreview',
+
                 element: <AddReview></AddReview>
+
             },
             {
                 path: '/review',
                 element: <Review></Review>
+            },
+            {
+                path: '/addservice',
+                element: <AddService></AddService>
             },
             {
                 path: '/login',

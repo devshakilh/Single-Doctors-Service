@@ -3,6 +3,7 @@ import imgNav from './drnav.png'
 import './Header.css'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { FaUser } from 'react-icons/fa';
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
 
@@ -20,10 +21,10 @@ const Header = () => {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                            <li><Link className='mr-2' to='/home'>Home</Link></li>
-                            <li><Link to='/blog'>Add Review</Link></li>
+                            <li><Link className='mr-2' to='/'>Home</Link></li>
+                            <li><Link to='/addservice'>Add Service</Link></li>
                             <li><Link to='/blog'>Blog</Link></li>
-                            <li><Link to='/service'>My Service</Link></li>
+                            <li><Link to='/allcard'>My Service</Link></li>
                         </ul>
                     </div>
                     <span><img className='image-size pl-12 ' src={imgNav} alt="" /></span>
@@ -37,9 +38,10 @@ const Header = () => {
 
                         </li>
                         <li><Link className='mr-2' to='/'>Home</Link></li>
-                        <li><Link to='/blog'>Add Review</Link></li>
+                        <li><Link to='/addservice'>Add Service</Link></li>
                         <li><Link to='/blog'>Blog</Link></li>
-                        <li><Link to='/service'>My Service</Link></li>
+                        <li><Link to='/allcard'>My Service</Link></li>
+                        <li><Link to='/review'>Review</Link></li>
                         {/* <li><Link to='/login'>Login</Link></li> */}
                         <>
                             {
@@ -57,6 +59,15 @@ const Header = () => {
 
 
                         </>
+                        {/* {user?.photoURL ?
+                            <image className='items-center'
+                                style={{ height: '30px' }}
+                                rounded
+                                src={user?.photoURL}>
+                            </>
+                            :
+                            <FaUser></FaUser>
+                        } */}
                     </ul>
                 </div>
                 <div className="navbar-end">

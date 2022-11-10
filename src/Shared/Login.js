@@ -1,6 +1,7 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 const Login = () => {
@@ -35,11 +36,11 @@ const Login = () => {
                 console.log(user);
                 form.reset();
                 setError('');
-                if (user.emailVerified) {
+                if (user) {
                     navigate(from, { replace: true });
                 }
                 else {
-                    error('Your email is not verified. Please verify your email address.')
+                    toast.error('Your email is not verified. Please verify your email address.')
                 }
             })
             .catch(error => {
@@ -49,9 +50,8 @@ const Login = () => {
             .finally(() => {
                 setLoading(false);
             })
-
-
     }
+
     // const { login } = useContext(AuthContext);
 
     // const handleLogin = event => {
@@ -64,10 +64,11 @@ const Login = () => {
     //         .then(result => {
     //             const user = result.user;
     //             console.log(user);
-
     //         })
     //         .then(error => console.log(error));
     // }
+
+
     return (
         <div>
             <div className="hero min-h-screen justify-center bg-slate-100">
@@ -81,28 +82,27 @@ const Login = () => {
 
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-white">
                         <h1 className="text-5xl font-bold text-black">Login now!</h1>
-                        <form onSubmit={handleSubmit} className="card-body">
+                        <form onSubmit={handleSubmit} className="card-body  bg-white">
+
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-black ">Email</span>
+                                    <span className="label-text text-black">Email</span>
                                 </label>
-                                <input type="text" placeholder="email" className="input input-bordered" />
+                                <input type="email" name='email' placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text text-black ">Password</span>
+                                    <span className="label-text text-black">Password</span>
                                 </label>
-                                <input type="text" placeholder="password" className="input  input-bordered" />
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover text-black font-semibold">Forgot password?</a>
-                                </label>
-                            </div>
-                            <div className="form-control mt-6">
-                                <input className='btn btn-primary' type="submit" value="Login" />
+                                <input type="password" name='password' placeholder="password" className="input input-bordered" required />
 
                             </div>
+                            <div className="form-control mt-5">
+                                <input className="btn btn-primary" type="submit" value="Login" />
+                            </div>
+                            {error}
                         </form>
-                        <p className='text-black font-semibold'>Have an Account! <Link to='/singup'><span className='font-bold text-orange-600'>SingUp</span></Link></p>
+                        <p className='text-black font-semibold'>Have an Account! <Link to='/singup'><span className='font-bold text-orange-600'>Sing Up</span></Link></p>
                         <div>
                             <button onClick={handleGoogleSignIn} className="btn btn-outline text-black mr-1"><FaGoogle></FaGoogle>Login with Google</button>
                             <button onClick={handleGithubProvider} className="btn btn-outline text-black"><FaGithub></FaGithub>Login with Github</button>

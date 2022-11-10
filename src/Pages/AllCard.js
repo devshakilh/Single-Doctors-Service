@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import ServiceCard from './ServiceCard';
-import { Link } from 'react-router-dom';
-const Service = () => {
+
+import AllCards from './AllCards';
+const AllCard = () => {
     const [service, setService] = useState([]);
     useEffect(() => {
-        fetch('https://assignment-11-server-blush.vercel.app/services')
+        fetch('https://assignment-11-server-blush.vercel.app/servicess')
             .then(res => res.json())
             .then(data => setService(data))
     }, [])
@@ -17,14 +17,14 @@ const Service = () => {
             </div>
             <div className='grid gap-5  my-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
-                    service.map(service => <ServiceCard
+                    service.map(service => <AllCards
                         key={service._id} service={service}
-                    ></ServiceCard>)
+                    ></AllCards>)
                 }
             </div>
-            <Link to='/allcard'><button className="btn btn-active btn-accent">Show All</button></Link>
+
         </div>
     );
 };
 
-export default Service;
+export default AllCard;
