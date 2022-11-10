@@ -29,7 +29,12 @@ const ReviewRow = ({ review, handleDelete, }) => {
                     </div>
                 </div>
             </td>
+            <td>
+                <div className="font-bold">{customer}</div>
+                <div className="text-sm opacity-50">{phone}</div>
+                <br />
 
+            </td>
             <td><span className="badge badge-ghost badge-sm">${price}</span></td>
             <td>
                 <div className="avatar">
