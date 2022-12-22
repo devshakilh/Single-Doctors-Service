@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import Login from '../Shared/Login';
 
-import PrivateRoute from './PrivateRoute';
 const AddReview = () => {
 
-    // const { _id, title, price, img, short_des } = useLoaderData();
+    const { _id, title, price, image, short_des } = useLoaderData();
     const { user } = useContext(AuthContext);
-
+    console.log(user);
     const handlePlaceReview = event => {
         event.preventDefault();
         const form = event.target;
@@ -17,14 +18,15 @@ const AddReview = () => {
         const message = form.message.value;
 
         const review = {
-            // service: _id,
-            // serviceName: title,
+            service: _id,
+            serviceName: title,
             // service: price,
             customer: name,
             phone,
             email,
             message,
-
+            title,
+            image
 
         }
 
@@ -39,7 +41,7 @@ const AddReview = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    alert('Review Placed Successfully')
+                    toast.success('Review Placed Successfully')
                     form.reset();
                 }
             })
@@ -50,7 +52,7 @@ const AddReview = () => {
         <div>
             <form onSubmit={handlePlaceReview} className='bg-slate-200 py-4'>
                 {/* <h2 className='text-4xl text-black my-4 text-semibold'>You are about Review: {title}</h2> */}
-
+                <ToastContainer />
                 <div className='grid grid-cols-1 ml-10 lg:grid-cols-2 gap-4 '>
                     <input name='firstName' type="text" placeholder="First Name" className="input input-bordered input-info w-full max-w-xs" />
                     <input name='lastName' type="text" placeholder="Last Name" className="input input-bordered input-info w-full max-w-xs" />
@@ -61,7 +63,13 @@ const AddReview = () => {
                 </div>
 
                 <textarea className="textarea h-24 w-full textarea-accent" name='message' placeholder="Your Message" required></textarea>
-                <input className=' btn text-white' type="submit" value="Your Review" />
+                <div>
+                    {
+                        user ? <div> <input className=' btn text-white' type="submit" value="Your Review" /></div>
+                            :
+                            <div><Link to='/login'><button className='text-4xl text-black btn btn-accent'>Login</button></Link></div>
+                    }
+                </div>
             </form>
         </div>
     );

@@ -6,7 +6,7 @@ const PrivateRoute = ({ children }) => {
     const { user, loading } = useContext(AuthContext);
     const location = useLocation();
     if (loading) {
-        return <h1 className='text-5xl'>Loading...</h1>
+        return <div className="radial-progress text-primary" style={{ "--value": 70 }}>70%</div>
     }
     if (!user) {
         return <Navigate to="/login" state={{ from: location }} replace></Navigate>

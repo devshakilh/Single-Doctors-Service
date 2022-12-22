@@ -1,7 +1,7 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState, } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 const Login = () => {
@@ -34,14 +34,30 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+
                 form.reset();
                 setError('');
-                if (user) {
-                    navigate(from, { replace: true });
+                const currentUser = {
+                    email: user.email
                 }
-                else {
-                    toast.error('Your email is not verified. Please verify your email address.')
-                }
+                console.log(currentUser);
+                // fetch('https://assignment-11-server-blush.vercel.app/jwt', {
+                //     method: 'POST',
+                //     headers: {
+                //         'content-type': 'application/json'
+                //     },
+                //     body: JSON.stringify(currentUser)
+                // })
+                //     .then(res => res.json())
+                //     .then(data => {
+                //         console.log(data);
+                //         // local storage is the easiest but not the best place to store jwt token
+                //         localStorage.setItem('genius-token', data.token);
+                //         navigate(from, { replace: true });
+                //     });
+                navigate(from, { replace: true });
+
+
             })
             .catch(error => {
                 console.error(error)
@@ -81,6 +97,7 @@ const Login = () => {
                     </div>
 
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-white">
+
                         <h1 className="text-5xl font-bold text-black">Login now!</h1>
                         <form onSubmit={handleSubmit} className="card-body  bg-white">
 
@@ -102,7 +119,7 @@ const Login = () => {
                             </div>
                             {error}
                         </form>
-                        <p className='text-black font-semibold'>Have an Account! <Link to='/singup'><span className='font-bold text-orange-600'>Sing Up</span></Link></p>
+                        <p className='text-black font-semibold'>New to ! <Link to='/singup'><span className='font-bold hover:text-sky-700 text-orange-600'>Sing Up</span></Link></p>
                         <div>
                             <button onClick={handleGoogleSignIn} className="btn btn-outline text-black mr-1"><FaGoogle></FaGoogle>Login with Google</button>
                             <button onClick={handleGithubProvider} className="btn btn-outline text-black"><FaGithub></FaGithub>Login with Github</button>

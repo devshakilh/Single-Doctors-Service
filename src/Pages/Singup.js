@@ -28,9 +28,10 @@ const SignUp = () => {
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
-        const name = form.name.value;
-        const photoURL = form.photoURL.value;
         const email = form.email.value;
+        const name = form.name.value;
+        // const photoURL = form.photoURL.value;
+
         const password = form.password.value;
         // console.log(name, photoURL, email, password);
 
@@ -41,9 +42,9 @@ const SignUp = () => {
                 console.log(user);
                 setError('');
                 form.reset();
-                handleUpdateUserProfile(name, photoURL);
 
-                toast.success('Please verify your email address.')
+
+                toast.success('Login sucessfully')
             })
             .catch(e => {
                 console.error(e);

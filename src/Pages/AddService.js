@@ -1,9 +1,8 @@
 import React, { useContext, } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import AddServiceCard from './AddServiceCard';
-
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 const AddService = () => {
     const { user } = useContext(AuthContext);
@@ -45,7 +44,7 @@ const AddService = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    toast.success("add placed Successfully!");
+                    toast.success('add placed Successfully!');
                     form.reset();
                 }
             })
@@ -57,7 +56,7 @@ const AddService = () => {
 
             <form onSubmit={handlePlaceAdd} className='bg-slate-200 py-4'>
                 {/* <h2 className='text-4xl text-black my-4 text-semibold'>You are about Review: {title}</h2> */}
-
+                <ToastContainer />
                 <div className='grid grid-cols-1 ml-10 lg:grid-cols-2 gap-4 '>
                     <input name='firstName' type="text" placeholder="First Name" className="input input-bordered input-info w-full max-w-xs" />
                     <input name='lastName' type="text" placeholder="Last Name" className="input input-bordered input-info w-full max-w-xs" />

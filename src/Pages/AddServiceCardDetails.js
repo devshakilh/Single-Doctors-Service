@@ -4,9 +4,10 @@ import AddReview from './AddReview';
 import Review from './Review';
 import { useLoaderData } from 'react-router-dom';
 const AddServiceCardDetails = () => {
-    const { _id, title, price, image, message } = useLoaderData();
+    const data = useLoaderData();
+    const { _id, title, price, image, message } = data;
     const { user } = useContext(AuthContext);
-
+    console.log(data);
     return (
         <div className='bg-white py-8 '>
             <div className='lg:flex'>
@@ -22,10 +23,20 @@ const AddServiceCardDetails = () => {
                 </div>
 
             </div>
-            <div className='py-4'>
-                <AddReview></AddReview>
+            <div>
+                {
+                    user ? <div>
+                        <div className='py-4'>
+                            <AddReview></AddReview>
+                        </div>
+                        <Review></Review>
+                    </div>
+                        :
+                        <div>
+                            <button>Login</button>
+                        </div>
+                }
             </div>
-            <Review></Review>
 
         </div>
     );

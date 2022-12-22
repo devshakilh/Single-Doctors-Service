@@ -3,6 +3,7 @@ import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import { Link } from 'react-router-dom';
 const AddServiceRow = ({ add }) => {
+    console.log(add);
     const { _id, customer, image, price, service, title, message } = add;
     return (
         <div>
@@ -15,7 +16,7 @@ const AddServiceRow = ({ add }) => {
                 </PhotoProvider>
                 <div className="card-body relative">
                     <h2 className="card-title text-black font-bold ">{title}</h2>
-                    <p className='text-black font-semibold'>{message.slice(0, 100)}..</p>
+                    <p className='text-black font-semibold'>{message?.slice(0, 100)}..</p>
                     <h2 className='font-bold text-black'>Price:{price}</h2>
                     <div className="card-actions justify-center">
                         <Link to={`/addservicecarddetails/${_id}`}><button className="btn  w-full h-px btn-primary">View Details</button></Link>

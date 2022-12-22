@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 const ReviewRow = ({ review, handleDelete, handleStatusUpdate }) => {
-    const { _id, phone, customer, price, service, message, status } = review;
+    const { _id, phone, customer, price, service, title, message, status } = review;
     const [reviewService, setReviewService] = useState({})
 
     useEffect(() => {
@@ -35,7 +35,7 @@ const ReviewRow = ({ review, handleDelete, handleStatusUpdate }) => {
                 <br />
 
             </td>
-            <td><span className="badge badge-ghost badge-sm">${price}</span></td>
+            <td><span className="badge badge-ghost badge-sm">{title}</span></td>
             <td>
                 <div className="avatar">
 

@@ -9,7 +9,7 @@ const Service = () => {
             .then(data => setService(data))
     }, [])
     return (
-        <div className='bg-white'>
+        <div className='bg-white pb-4'>
             <div className='text-center pt-5'>
 
                 <h1 className='text-5xl font-semibold text-black'>My Service Area</h1>
@@ -22,7 +22,7 @@ const Service = () => {
                     ></ServiceCard>)
                 }
             </div>
-            <Link to='/allcard'><button className="btn btn-active btn-accent">Show All</button></Link>
+            <Link to='/allcard'><button className="btn   h-px btn-primary">Show All</button></Link>
         </div>
     );
 };

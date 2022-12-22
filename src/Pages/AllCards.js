@@ -10,7 +10,7 @@ const AllCards = ({ service }) => {
     return (
 
         <div>
-            <div className="card bg-slate-400  card-compact py-5 mx-5 w-96 bg-white shadow-xl">
+            <div className="card bg-slate-400  card-compact py-5  w-96 bg-white shadow-xl">
                 <div>
 
                 </div>
@@ -21,7 +21,7 @@ const AllCards = ({ service }) => {
                 </PhotoProvider>
                 <div className="card-body relative">
                     <h2 className="card-title text-black font-bold ">{title}</h2>
-                    <p className='text-black font-semibold'>{short_des.slice(0, 100)}..</p>
+                    <p className='text-black font-semibold'>{short_des?.slice(0, 100) + '...'}</p>
                     <h2 className='font-bold text-black'>Price:{price}</h2>
                     <div className="card-actions justify-center">
                         <Link to={`/servicecarddetails/${_id}`}><button className="btn  w-full h-px btn-primary">View Details</button></Link>
