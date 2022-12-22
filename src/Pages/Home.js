@@ -48,7 +48,28 @@ const Home = () => {
 
                 </div>
             </div> */}
+            <div>
+                <div className="card lg:card-side shadow-xl  my-6">
+                    <div className='grid  bg-zinc-700  grid-cols-1    lg:w-1/2 lg:grid-cols-2'>
+                        <div >
+                            <figure><img className='lg:h-72  lg:w-64 h-96 w-96 my-4  ' src="https://media.self.com/photos/57d88c4e50778cef321a46f7/master/pass/natural-c-section_feat.jpg" alt="Album" /></figure>
+                            <figure><img className='lg:h-72 mb-4 lg:w-64 h-96 w-96' src="https://myvision.org/wp-content/uploads/2022/02/woman-having-laser-eye-surgery.jpg" alt="Album" /></figure>
+                        </div>
+                        <div>
+                            <figure><img className='my-4 lg:h-72 lg:w-64 h-96 w-96 ' src="https://www.researchgate.net/publication/333327709/figure/fig2/AS:766017164832772@1559644132573/Trocar-position-for-laparoscopic-liver-resection-Surgery-was-performed-by-the-insertion.jpg" alt="Album" /></figure>
+                            <figure><img className='lg:h-72 lg:w-64 h-96 w-96' src="https://www.jaohns.com/wp-content/uploads/2019/10/operation-80124_640.jpg" alt="Album" /></figure>
+                        </div>
+                    </div>
 
+                    <div className="card-body text-black content-center lg:w-1/2">
+                        <h1 className="text-5xl font-bold ">Non-Frost Refrigerator!</h1>
+                        <p className="py-6">Direct Cool Refrigerator
+                            Welcome to an experience of freshness. WALTON Direct Cool Refrigerators are equipped with 100% copper condensers and Nano technology to take care of your evolving needs and at the same time, maintain the quality of the food that you preserve</p>
+                        <p className="py-6">When you have Walton refrigerator & freezer in your home you are safe from going to market every day that keeps you free from extra burden. You can keep all your foods and stuffs fresh for long. Our energy-saving, </p>
+
+                    </div>
+                </div>
+            </div>
             <div className='bg-slate-100'>
 
 
